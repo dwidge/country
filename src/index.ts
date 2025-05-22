@@ -278,3 +278,10 @@ export const countryList = Object.entries(countryMap)
   id: CountryCode;
   label: CountryName;
 }[];
+
+export const countryOptions = countryList
+  .map(({ id, label }) => ({
+    value: id,
+    label: `${label} (${id})`,
+  }))
+  .sort((a, b) => a.label.localeCompare(b.label));
